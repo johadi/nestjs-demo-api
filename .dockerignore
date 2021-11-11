@@ -1,0 +1,17 @@
+/dist
+Dockerfile
+.dockerignore
+node_modules
+yarn-error.log
+.idea
+idea/
+/*.xml
+/playground
+npm-debug.log
+/reports
+.DS_Store
+/coverage
+.env.sample
+package-lock.json
+.env
+

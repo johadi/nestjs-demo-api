@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  database:
+    image: mongo:latest
+    ports:
+    - "27017:27017"
+    volumes:
+    - mongodb_data:/data/db
+  api:
+    build:
+      context: .
+      args:
+        - NODE_ENV=development
+    ports:
+    - "3000:3000"
+    environment:
+      - MONGO_URL=mongodb://database:27017/seenons
+    volumes:
+    - .:/usr/app
+    - /usr/app/node_modules/
+    depends_on:
+    - database
+
+volumes:
+  mongodb_data:
