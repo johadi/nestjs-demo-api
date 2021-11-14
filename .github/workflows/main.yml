@@ -30,11 +30,15 @@ jobs:
       # Install dependecies
       - name: Install dependencies
         run: npm install
-        
-      # Runs tests
-      - name: Run tests
+
+      # Runs unit tests
+      - name: Run unit tests
         run: npm test
-        
+
+      # Runs e2e tests
+      - name: Run e2e tests
+        run: npm run test:e2e
+
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
