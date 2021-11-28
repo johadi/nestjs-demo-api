@@ -10,6 +10,6 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   await app.listen(port);
-  console.log('App running');
+  console.log('App started running');
 }
 bootstrap();
